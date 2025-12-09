@@ -22,8 +22,9 @@ typedef struct hashTable {
 int hashing(string word);
 
 // Hash table functions
-void insert(hashTable* ht, string word);
+void insertValHash(hashTable* ht, string word);
 bool find(hashTable ht, string word);
 hashTable createHashTable(int leng);
+string deleteValHash(hashTable* ht,string word) ;
 
 #endif // HASH_H
