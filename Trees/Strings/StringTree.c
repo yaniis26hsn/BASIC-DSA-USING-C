@@ -11,13 +11,13 @@ struct node *left ;
 }node;
 // freeTree(node* tree){ // we will not to free the string inside the node too .} for later 
 
-
+node* createTree(string data); // forward declaration
 
 bool findValBst(node* tree,string data){
     if(tree==NULL) return false ;
     if(strcmp(tree->val,data)==0) return true ;
-     if(strcmp(tree->val,data) < 0) return findValBst(tree->left,data) ;
-     if(strcmp(tree->val,data) > 0) return findValBst(tree->right,data) ;
+     if(strcmp(tree->val,data) < 0) return findValBst(tree->right,data) ;
+     if(strcmp(tree->val,data) > 0) return findValBst(tree->left,data) ;
      // make sure that the left value is the smaller and the bigger on the right not the inverse 
      return false ; // this line is unnecessary logically but to make sure that the complier we won't warn us
      // about a case where won't return something . but logically there will a return and we will never execute this last line
@@ -60,7 +60,7 @@ bool isLeaf(node* tree) {
     return (tree->left==NULL && tree->right==NULL ) ;
 } 
 
-node* findValParent(node* tree ,string data){
+node* findValParentBst(node* tree ,string data){
     // this fnc returns a pointer to the parent of the node that has the value data 
     // make sure that the value exists or you get null and the value it not on the root (the root has no parent)
     if(tree==NULL) return NULL ;
@@ -75,9 +75,9 @@ node* findValParent(node* tree ,string data){
         return tree ;
     }
 }
-     node* leftSideRes = findValParent(tree->left,data) ;
+     node* leftSideRes = findValParentBst(tree->left,data) ;
     if(tree->left != NULL &&  leftSideRes != NULL) return leftSideRes ;
-    if(tree->right != NULL) return findValParent(tree->right,data) ;
+    if(tree->right != NULL) return findValParentBst(tree->right,data) ;
     
     return NULL ;
 }
