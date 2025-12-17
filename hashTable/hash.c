@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-#include "DynamicLists/list.h"
+#include "../DynamicLists/list.h"
 
 typedef char* string ;
 typedef struct node
