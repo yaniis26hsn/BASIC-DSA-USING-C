@@ -66,10 +66,3 @@ string deleteValHash(hashTable* ht,string word){
 // later we will maybe add deleteHashTable (the whole table)
 
 
-
-
-
-
-
-
-

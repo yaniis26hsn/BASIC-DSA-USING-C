@@ -128,7 +128,7 @@ printBstAscending(tree->right) ; // 2
 }
 // void printTreeInForm() {for later ...}
 
-int partition(int[] array ,int start,int end){
+int partition(int array[] ,int start,int end){
     // this fnc is working with sortArray fnc 
     int pivot = array[end] ;
     int i = start - 1 ;
@@ -237,7 +237,7 @@ int deleteValBst(node** tree,int data){
     // this fnc will delete a node inside a BST 
     // it works with a normal binary tree too , you can use it with it
     // we will return the deleted value 
-    // if the value doesnt exist we will return a value different than the parameter as a sign
+    // if the value doesnt exist we will return a value different than the parameter as a sign of a mistake 
     if(!findValBst(*tree,data)) {printf("error : the value doesnt exist ") ;
       return data +  1 ;
         

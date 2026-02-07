@@ -2,7 +2,7 @@
 #define HASH_H
 
 #include <stdbool.h>
-#include "DynamicLists/list.h"  // for node definition and list functions
+#include "../DynamicLists/list.h"  // for node definition and list functions
 
 typedef char* string;
 
